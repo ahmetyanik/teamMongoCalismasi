@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <form class="veri" action="/ekle" method="post">
+
+        <div class="">
+          <button type="submit">+</button>
+
+<div class="">
+    <label for="">Isim</label>  <input type="text" name="isim" value="" onclick="return false" >
+
+</div>
+  <div class="">
+    <label for="">Soyisim</label>  <input type="text" name="soyisim" value="">
+  </div>
+
+  <div class="">
+      <label for="">Yas</label>  <input type="text" name="yas" value="">
+  </div>
+        </div>
+
+
+  </form>
+    </div>
+
+    <% for(var i=0;i<kisiler.length;i++){%>
+
+      <div class="container">
+        <div class="alert alert-success">
+          <div class="d-flex d-inline-block">
+            ad:<%=kisiler[i].isim%>
+            ad:<%=kisiler[i].soyisim%>
+            ad:<%=kisiler[i].yas%>
+          </div>
+
+          <form style="float:right" class="d-flex d-inline-block" action="sil" method="post">
+          <button type="submit" name="formid" value="<%=kisiler[i]._id%>"><div  class="d-flex d-inline-block "  ><i class="fas fa-trash-alt mb-5"></i></div></button>
+          </form>
+
+        </div>
+      </div>
+
+
+    <%}%>
+
+
+
+
+
+
+  </body>
+</html>
